@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage[linkbordercolor=blue]{hyperref}
+
+\author{Gustavo Vital\thanks{Faculdade de Economia do Porto -- FEP. Email: gustavoovital@id.uff.br}}
+\title{Notas sobre o modelo de Ramsey-Cass-Koopman}
+
+\begin{document}
+\maketitle
+
+Modelos de crescimento econômico frequentemente são revisitados e revisados. Em termos do \textit{mainstream} o modelo de Solow (mesmo responsável pelo prêmio Nobel) introduz o conceito de exogeneidade ao crescimento de uma nação. Levando em consideração -- na sua forma mais básica -- tecnologia; estoque de capital; e trabalho; Solow apresenta de forma sucinta seu modelo de crescimento. O modelo, entretanto, peca em alguns fatores considerados cruciais para o melhor entendimento de como se dá o crescimento de uma economia. Sua premissa de exogeneidade quanto a choques tecnológicos também é contestável, visto que tecnologia acontece fundamentalmente devido a acumulo de conhecimento, educação.
+
+\section{O Modelo de Ramsey-Cass-Koopman}  
+
+O modelo de Ramsey-Cass-Koopman se apresenta como um modelo de horizonte infinito. A vantagem fundamental é explicar de forma matemática o processo de decisão dos agentes, de forma microfundamentada. A compreensão desse modelo é essencial para a compreensão da teoria de \textit{Real Business Cycle} (RBC).
+
+\subsection{Premissas do Modelo}
+
+Considera-se que existe um número infinito de famílias idênticas e o tamanho de cada família cresce a uma taxa $n$. A equação que descreve o crescimento da população é dada por:
+\begin{align*}
+\frac{dL}{dn} = nL
+\end{align*}
+\noindent
+integrando de ambos os lados, ficamos com:
+\begin{align*}
+\int_{L_0}^{L}\frac{dL}{L} &= \int_0 ^t ndt 
+\end{align*}
+\noindent
+o que nos dá:
+\begin{align*}
+\log L\Big|_{L_0}^{L} &= nt\Big|_0^t \\
+\therefore \log L - \log L_0 &= nt \\
+\therefore \log \left(\frac{L}{L_0}\right) &= nt 
+\end{align*}
+\noindent
+aplicando o exponencial:
+\begin{align} \label{eq:cresc}
+L(t) = L_0 e^{nt}
+\end{align}
+A equação \eqref{eq:cresc} representa o crescimento populacional da economia onde $L(t)$ representa a população total da economia; $L_0$ a população inicial no momento analisado e $t$ o tempo percorrido. Se considerarmos $H$ como o número de famílias e $\bar{C}$ o consumo total da economia. O consumo per capita será representado por:
+\begin{align*}
+\frac{\bar{C}(t)}{L(t)}
+\end{align*} 
+\noindent
+e o consumo por membro família $(C(t))$ será dado por:
+\begin{align} \label{eq:fam}
+C(t) = \frac{\bar{C}(t)}{\left(\frac{L(t)}{H}\right)}
+\end{align}
+\noindent
+de onde tiramos que o consumo total pode ser escrito como:
+\begin{align*}
+\bar{C}(t) = C(t)\frac{L(t)}{H}
+\end{align*}
+
+\subsection{Utilidade}
+Tomando por base um modelo microfundamentado, é essencial que tomemos em consideração a utilidade dos agentes. Representando a utilidade de cada membro da família por $u(C(t))$, podemos generalizar e representar a utilidade da população no período $t$ por:
+\begin{align*}
+U(\bar{C}(t)) = u(C(t))\frac{L(t)}{H}
+\end{align*} 
+\noindent
+A utilidade, então, da vida dos indivíduos pode ser representada por:
+\begin{align}
+U = U(\bar{C}(0)) + \beta U(\bar{C}(1)) + \beta^2 U(\bar{C}(2)) + \dots + \beta^t U(\bar{C}(t)) 
+\end{align}
+\noindent
+em que $\beta$ representa o fator de desconto intertemporal da utilidade. O problema da equação acima é levar em consideração que o tempo é uma variável discreta. O problema pode ser representado de outra maneira, tomando por base que o tempo é uma variável contínua:
+\begin{align} \label{eq:cont}
+U = \int_0 ^t \beta^t U(\bar{C}(t))dt
+\end{align}
+\noindent
+podemos reescrever \eqref{eq:cont} de forma que considere a utilidade por membro da família. Unindo \eqref{eq:fam} e \eqref{eq:cont} e considerando um horizonte infinito de tempo, temos:
+\begin{align} \label{eq:ltu}
+U = \int_0 ^\infty \beta^t u(C(t))\frac{L(t)}{H} dt
+\end{align}
+\noindent
+a equação \eqref{eq:ltu} é chamada de \textit{lifetime utility}, e demonstra que a geração no período $t$ é seguida de seus descendentes, com transferências intergeracionais baseadas no altruísmo.\\
+
+Por mais que o modelo de Ramsey-Cass-Koopman não considere expectativas e incertezas, a partir da especificação da função de utilidade é possível inferir sobre determinadas preferências dos agentes. Por exemplo, ao considerarmos que a função utilidade assume um formato CRRA\footnote{$u(c) = \frac{c^{1-\theta}}{1-\theta}$}, quando o parâmetro $\theta$ se aproxima de zero a famílias estão dispostas a aceitarem oscilações no consumo afim de tirarem vantagem da diferença entre a taxa de desconto e a taxa de retorno sobre a poupança. Considerando uma função utilidade de formato CRRA, temos que a \textit{lifetime utility} pode ser expressa por:
+\begin{align*} 
+U = \int_0 ^\infty \beta^t \left[\frac{c^{1-\theta}}{1-\theta}\right]\frac{L(t)}{H} dt
+\end{align*}
+
+\subsection{Produção e Estoques}
+
+A função de produção no modelo de Ramsey-Cass-Koopman se assemelha a função de produção no modelo de Solow. A tecnologia, entretanto, é tratada como uma variável endógena. Definimos de forma genérica a função de produção:
+\begin{align*}
+Y(t) = F(A(t), K(t), L(t))
+\end{align*}
+\noindent
+em que A(t) representa a tecnologia, K(t) o estoque de capitais, e L(t) o trabalho. No modelo, somente os níveis iniciais das variáveis são considerados exógenos e crescem a uma taxa constante, tal que:
+\begin{align*}
+\dot{L}(t) &= nL(t) \\
+\dot{A}(t) &= gA(t)
+\end{align*} 
+\noindent
+consideramos, também, que a função de produção possui retornos constantes de escala. Isso é $F(\alpha K, \alpha AL)= \alpha F(K,AL)$. Assim, assumindo retorno constante de escala e dividindo a função de produção por AL e sendo $k = \frac{K}{AL}$, temos:
+\begin{align*}
+F\left(\frac{K}{AL}, 1\right) = \frac{1}{AL}F(K, AL) \Rightarrow \underbrace{F(k, 1)}_{f(k)} = \frac{Y}{AL}
+\end{align*}
+\noindent
+$f(k)$ é chamada de \textbf{função de produção na sua forma intensiva}
+
+
+\end{document}
