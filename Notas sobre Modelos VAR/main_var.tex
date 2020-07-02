@@ -8,14 +8,17 @@
 \usepackage{graphicx}
 \usepackage{lmodern}
 \author{Gustavo Vital}
-\title{Notas sobre Vetores Auto-regressivos}
+\title{Notas sobre Vetores Auto-regressivos\footnote{Baseado em Walter Enders}}
 
 \begin{document}
 \maketitle
 
-Uma série temporal multivariada $x_t = (x_1, x_2, \dots, x_n)$ é dita um vetor auto-regressivo de ordem 1 se segue o seguinte modelo:
-\begin{align}
-Ax_t = \Gamma_0 + \Gamma_1 x_{t-1} + \epsilon
+Modelos Auto-regressivos são modelos que relacionam sistemas dinâmicos de equações tal que as variáveis das equações são endógenas. De uma outra forma, há dependência contemporânea entre as variáveis, bem como relação com suas defasagens. Considere o sistema bivariado: 
+\begin{align} \label{eq1}
+y_t &= b_{10} - b_{12}z_t + \gamma_{11}y_{t-1} + \gamma_{12}z_{t-1} + \epsilon_{yt}\\ \label{eq2}
+z_t &= b_{20} - b_{21}z_t + \gamma_{21}y_{t-1} + \gamma_{22}z_{t-1} + \epsilon_{zt} 
 \end{align}
+\noindent
+onde assumimos que (i) tanto $y_t$ como $z_t$ são estacionárias; (ii) $\epsilon_{yt}$ e $\epsilon_{zt}$ são ruídos brancos; e (iii) \{$\epsilon_{yt}$\} e \{$\epsilon_{yt}$\} são não relacionados.
 
 \end{document}

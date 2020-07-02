@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.26)  1 JUL 2020 20:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 2.9.7440 64-bit) (preloaded format=pdflatex 2020.6.26)  2 JUL 2020 20:43
 entering extended mode
 **./main_var.tex
 (main_var.tex
@@ -201,8 +201,7 @@ d-pdfmode.def"
 File: l3backend-pdfmode.def 2020-06-23 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count189
 \l__pdf_internal_box=\box47
-)
-No file main_var.aux.
+) (main_var.aux)
 \openout1 = `main_var.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -221,6 +220,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
 LaTeX Font Info:    ... okay on input line 13.
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 13
 .
+
 ("C:\Users\gusta\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\t1lmr.fd"
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -270,11 +270,11 @@ LaTeX Font Info:    Trying to load font information for OMX+lmex on input line
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <12> on input line 14.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 14.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 14.
+(Font)              <10> on input line 14.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
 
 
@@ -286,35 +286,57 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
 ("C:\Users\gusta\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
+4.
+("C:\Users\gusta\AppData\Local\Programs\MiKTeX 2.9\tex/latex/lm\ts1lmr.fd"
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 16.
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 14.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 17.
+
 [1
 
 {C:/Users/gusta/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(main_var.aux) ) 
+(main_var.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3342 strings out of 480790
- 45561 string characters out of 2895390
- 289426 words of memory out of 3000000
- 19313 multiletter control sequences out of 15000+200000
- 558684 words of font info for 50 fonts, out of 3000000 for 9000
+ 3417 strings out of 480790
+ 46968 string characters out of 2895390
+ 290453 words of memory out of 3000000
+ 19370 multiletter control sequences out of 15000+200000
+ 581471 words of font info for 74 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,8n,27p,227b,204s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvi
-ps/lm/lm-mathsy.enc}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-rm.enc}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc
-/dvips/lm/lm-mathit.enc}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts
-/enc/dvips/lm/lm-ec.enc}<C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts
-/type1/public/lm/lmmi10.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/f
-onts/type1/public/lm/lmmi8.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.
-9/fonts/type1/public/lm/lmr10.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/lm/lmr12.pfb><C:/Users/gusta/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/lm/lmr17.pfb><C:/Users/gusta/AppData/Local/Programs/
-MiKTeX 2.9/fonts/type1/public/lm/lmr8.pfb><C:/Users/gusta/AppData/Local/Program
-s/MiKTeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
-Output written on main_var.pdf (1 page, 110568 bytes).
+ 30i,8n,27p,309b,257s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ec.en
+c}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-ts1.e
+nc}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-math
+sy.enc}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+rm.enc}{C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/lm/lm-
+mathit.enc}<C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/lm/lmmi10.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/lm/lmmi8.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/lm/lmr10.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/lm/lmr12.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/lm/lmr17.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/lm/lmr6.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.9/
+fonts/type1/public/lm/lmr8.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/lm/lmr9.pfb><C:/Users/gusta/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/lm/lmsy10.pfb><C:/Users/gusta/AppData/Local/Programs/MiK
+TeX 2.9/fonts/type1/public/lm/lmsy8.pfb>
+Output written on main_var.pdf (1 page, 145314 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
+ 55 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
