@@ -85,10 +85,34 @@ z_t
 \end{align*}
 \noindent
 pré multiplicando \ref{bvar} por $B^{-1}$, obtemos o VAR em sua forma reduzida:
-\begin{align}
+\begin{align} \label{varreduzido}
 x_t = A_0 + A_1 x_{t-1} + e_t
 \end{align}
 \noindent
-onde $A_0 = B^{-1}\Gamma_0$, $A_1 = B^{-1}\Gamma_1$, e $e_t = B^{-1}\epsilon_t$
+onde $A_0 = B^{-1}\Gamma_0$, $A_1 = B^{-1}\Gamma_1$, e $e_t = B^{-1}\epsilon_t$. Para propósito de notação, podemos definir $a_{i0}$ como o elemento $i$ do vetor $A_0$; $a_{ij}$ como o elemento na linha $i$ e coluna $j$ da matriz $A_1$ e $e_{it}$ como o elemento $i$ do vetor $e_{t}$. Reescrevendo \ref{varreduzido} de forma equivalente:
+\begin{align} \label{red1}
+y_t &= a_{10} + a_{11}y_{t-1} + a_{12}z_{t-1} + e_{1t} \\ \label{red2}
+z_t &= a_{20} + a_{21}y_{t-1} + a_{22}z_{t-1} + e_{2t}
+\end{align}
+\noindent 
+a diferença crucial entre o sistema apresentado em \ref{eq1} e \ref{eq2} para o sistema apresentado acima (\ref{red1} e \ref{red2}) é que o primeiro sistema é chamado de VAR em sua forma estrutural, e o segundo de VAR em sua forma reduzida.
 
+
+\section{Estabilidade e Estacionariedade}
+
+Num VAR(1) $y_t = a_0 + a_1 y_{t-1} + \epsilon_t$ a condição de estabilidade é que $a_1$ seja menor do que uma unidade em valores absolutos. Podemos reescrever \ref{varreduzido}:
+\begin{align*}
+x_t &= A_0 + A_1 x_{t-1} + e_t \\
+    &= A_0 + A_1 (A_0 + A_1 x_{t-2} + e_{t-1}) + e_t \\
+    &= (I + A_1)A_0 + A_1^{2}x_{t-2} + A_1 e_{t-1} + e_t
+\end{align*}
+\noindent
+onde $I$ é a matriz identidade $2\times 2$. Se continuarmos o processo $n$ vezes, de forma que $n \rightarrow \infty$ teremos:
+\begin{align*}
+x_t = (I + A_1 + \dots + A_1^n)A_0 + \sum_{i=0}^{n} A_{1}^{i} e_{t-i} + A_1 ^{n+1} x_{t-n-1}
+\end{align*}
+Se $n \rightarrow \infty$ e a condição de estabilidade é verificada, isso é, $a_1 < |1|$, temos:
+\begin{align}
+x_t = \mu + \sum_{i=0}^{\infty}A_{1}^{i}e_{t-i}
+\end{align}
 \end{document}
