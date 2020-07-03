@@ -4,11 +4,18 @@
 \usepackage[T1]{fontenc}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{xcolor}
 \usepackage{amssymb}
+\usepackage[left=2.5cm, bottom=2cm, top=2cm, right=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{lmodern}
+\usepackage[linkbordercolor=blue]{hyperref}
+\usepackage{setspace}
+
 \author{Gustavo Vital}
 \title{Notas sobre Vetores Auto-regressivos\footnote{Baseado em Walter Enders}}
+
+\onehalfspacing
 
 \begin{document}
 \maketitle
@@ -19,6 +26,69 @@ y_t &= b_{10} - b_{12}z_t + \gamma_{11}y_{t-1} + \gamma_{12}z_{t-1} + \epsilon_{
 z_t &= b_{20} - b_{21}z_t + \gamma_{21}y_{t-1} + \gamma_{22}z_{t-1} + \epsilon_{zt} 
 \end{align}
 \noindent
-onde assumimos que (i) tanto $y_t$ como $z_t$ são estacionárias; (ii) $\epsilon_{yt}$ e $\epsilon_{zt}$ são ruídos brancos; e (iii) \{$\epsilon_{yt}$\} e \{$\epsilon_{yt}$\} são não relacionados.
+onde assumimos que (i) tanto $y_t$ como $z_t$ são estacionárias; (ii) $\epsilon_{yt}$ e $\epsilon_{zt}$ são ruídos brancos; e (iii) \{$\epsilon_{yt}$\} e \{$\epsilon_{yt}$\} são não relacionados. Dizemos que as equações \ref{eq1} e \ref{eq2} constituem um \textbf{vetor auto-regressivo} de ordem 1. A fim de interpretação, o coeficiente $b_{12}$ representa o efeito contemporâneo de $z_t$ em $y_t$ e $\gamma_{12}$ representa o efeito de $z_{t-1}$ em $y_t$.\\
+
+Ainda, as equações \ref{eq1} e \ref{eq2} não podem ser estimadas por OLS visto que $y_t$ tem efeito contemporâneo em $z_t$ e $z_t$ tem efeito contemporâneo em $y_t$. A estimação por OLS seria, então, viesada e os resíduos seriam correlacionados. Felizmente, é possível transformarmos o sistema de equações de forma que este seja mais palpável. Usando notação matricial podemos reescrever o sistema da seguinte forma:
+
+\begin{align*}
+\begin{bmatrix}
+1 & b_{12} \\
+b_{21} & 1 
+\end{bmatrix}
+\begin{bmatrix}
+y_t \\
+z_t
+\end{bmatrix}
+=
+\begin{bmatrix}
+b_{10}\\
+b_{20}
+\end{bmatrix}
+\begin{bmatrix}
+\gamma_{11} & \gamma_{12} \\
+\gamma_{21} & \gamma_{22}
+\end{bmatrix}
+\begin{bmatrix}
+y_{t-1}\\
+z_{t-1}
+\end{bmatrix}
++
+\begin{bmatrix}
+\epsilon_{yt}\\
+\epsilon_{zt}
+\end{bmatrix}
+\end{align*}
+\noindent
+ou ainda:
+\begin{align} \label{bvar}
+Bx_t = \Gamma_0 + \Gamma_1 x_{t-1} + \epsilon_t
+\end{align}
+\noindent
+onde:
+\begin{align*}
+B= \begin{bmatrix}
+1 & b_{12} \\
+b_{21} & 1 
+\end{bmatrix}, x_t = \begin{bmatrix}
+y_t \\
+z_t
+\end{bmatrix}, \Gamma_0 = \begin{bmatrix}
+y_t \\
+z_t
+\end{bmatrix}, \Gamma_1 = \begin{bmatrix}
+y_t \\
+z_t
+\end{bmatrix}, \epsilon_t = \begin{bmatrix}
+\epsilon_{yt}\\
+\epsilon_{zt}
+\end{bmatrix}
+\end{align*}
+\noindent
+pré multiplicando \ref{bvar} por $B^{-1}$, obtemos o VAR em sua forma reduzida:
+\begin{align}
+x_t = A_0 + A_1 x_{t-1} + e_t
+\end{align}
+\noindent
+onde $A_0 = B^{-1}\Gamma_0$, $A_1 = B^{-1}\Gamma_1$, e $e_t = B^{-1}\epsilon_t$
 
 \end{document}
