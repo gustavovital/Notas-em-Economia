@@ -7,6 +7,7 @@
 \usepackage{xcolor}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage[left=2.5cm, bottom=2cm, top=2cm, right=2.5cm]{geometry}
 \usepackage{lmodern}
 \usepackage[linkbordercolor=blue]{hyperref}
 
@@ -16,7 +17,7 @@
 \begin{document}
 \maketitle
 
-Modelos de crescimento econômico frequentemente são revisitados e revisados. Em termos do \textit{mainstream} o modelo de Solow (mesmo responsável pelo prêmio Nobel) introduz o conceito de exogeneidade ao crescimento de uma nação. Levando em consideração -- na sua forma mais básica -- tecnologia; estoque de capital; e trabalho; Solow apresenta de forma sucinta seu modelo de crescimento. O modelo, entretanto, peca em alguns fatores considerados cruciais para o melhor entendimento de como se dá o crescimento de uma economia. Sua premissa de exogeneidade quanto a choques tecnológicos também é contestável, visto que tecnologia acontece fundamentalmente devido a acumulo de conhecimento, educação.
+Modelos de crescimento econômico frequentemente são revisitados e revisados. Em termos do \textit{mainstream}, o modelo de Solow (mesmo responsável pelo prêmio Nobel) introduz o conceito de exogeneidade ao crescimento de uma nação. Levando em consideração -- na sua forma mais básica -- tecnologia; estoque de capital; e trabalho; Solow apresenta de forma sucinta seu modelo de crescimento. O modelo, entretanto, peca em alguns fatores considerados cruciais para o melhor entendimento de como se dá o crescimento de uma economia. Sua premissa de exogeneidade quanto a choques tecnológicos também é contestável, visto que tecnologia acontece fundamentalmente devido a acumulo de conhecimento, educação.
 
 \section{O Modelo de Ramsey-Cass-Koopman}  
 
@@ -36,9 +37,7 @@ integrando de ambos os lados, ficamos com:
 \noindent
 o que nos dá:
 \begin{align*}
-\log L\Big|_{L_0}^{L} &= nt\Big|_0^t \\
-\therefore \log L - \log L_0 &= nt \\
-\therefore \log \left(\frac{L}{L_0}\right) &= nt 
+\log \left(\frac{L}{L_0}\right) &= nt 
 \end{align*}
 \noindent
 aplicando o exponencial:
@@ -85,7 +84,7 @@ a equação \eqref{eq:ltu} é chamada de \textit{lifetime utility}, e demonstra 
 
 Por mais que o modelo de Ramsey-Cass-Koopman não considere expectativas e incertezas, a partir da especificação da função de utilidade é possível inferir sobre determinadas preferências dos agentes. Por exemplo, ao considerarmos que a função utilidade assume um formato CRRA\footnote{$u(c) = \frac{c^{1-\theta}}{1-\theta}$}, quando o parâmetro $\theta$ se aproxima de zero a famílias estão dispostas a aceitarem oscilações no consumo afim de tirarem vantagem da diferença entre a taxa de desconto e a taxa de retorno sobre a poupança. Considerando uma função utilidade de formato CRRA, temos que a \textit{lifetime utility} pode ser expressa por:
 \begin{align*} 
-U = \int_0 ^\infty \beta^t \left[\frac{c^{1-\theta}}{1-\theta}\right]\frac{L(t)}{H} dt
+U = \int_0 ^\infty \beta^t \left(\frac{c^{1-\theta}}{1-\theta}\right)\frac{L(t)}{H} dt
 \end{align*}
 
 \subsection{Produção e Estoques}
@@ -110,6 +109,19 @@ $f(k)$ é chamada de \textbf{função de produção na sua forma intensiva}
 
 \section{Comportamento das Firmas}
 
-
+A premissa inicial para o comportamento das firmas é que, seja em qual for a parte do tempo, a firmas utilizam estoque de trabalho e capital e como pagamento utilizam seus produtos marginais de forma que vendem sua produção resultante. Além disso, é considerado lucro zero, visto que a economia se encontra em estado de competitividade. Isso significa que: a remuneração do capital é a própria produtividade marginal do capital $f'(k)$. Ainda, como não existe depreciação, a taxa de retorno real sobre o capital iguala seus ganhos por unidade de tempo:
+\begin{align}
+r(t) = f'(k(t))
+\end{align}
+\noindent
+como a firma remunera de acordo com a produtividade marginal:
+\begin{align}
+W(t) = A(t)[f(k(t)) - k(t)f'(k(t))]
+\end{align}
+\noindent
+então o salário por unidade efetiva é:
+\begin{align}
+w(t) = f(k(t)) - k(t)f'(k(t))
+\end{align}
 
 \end{document}
