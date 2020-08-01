@@ -1,0 +1,107 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{xcolor}
+%\usepackage{lmodern}
+\usepackage[linkbordercolor=blue]{hyperref}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\author{Gustavo Vital}
+\title{Derivação de um Modelo Novo Keynesiano Simples}
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+
+\section{Famílias}
+A primeira premissa do modelo se da em relação as famílias. Assumimos que as famílias são consideradas infinitas e supomos que possuem preferências idênticas tal que $j \in (0,1)$. Ainda, assumimos que que a utilidade das famílias são relacionadas com dois bens consumo e trabalho, tal que:
+\begin{align} \label{utilidade}
+\mathcal{U}(C_{j,t}, L_{j,t}) = \frac{(C_{j,t} - hC_{j,t-1})^{1-\sigma}}{1-\sigma} - \chi \frac{L_{j,t}^{1 + \gamma}}{1 + \gamma}
+\end{align}
+\noindent
+onde $C_{jt}$ é o consumo no tempo $t$, $h$ é o parâmetro relacionado a formação de hábito de consumo, $\sigma$ é o parâmetro de utilidade marginal do consumo, $\gamma$ é o parâmetro de desutilidade marginal do trabalho, $L_{jt}$ é o trabalho. O objetivo dos agentes é maximizar sua utilidade em função da sua restrição intertemporal:
+\begin{align}
+\max_{C_j, L_j, K_j}\mathbb{E}\sum_{t=0}^{\infty}\beta^{t}\xi_{t}^{c}\mathcal{U}(C_{j,t},L_t)
+\end{align}
+\noindent
+Onde $\mathbb{E}$ denota o operador de expectativas, $\tau$ representa o tempo num período de tempo infinito, $\beta^t$ representa o fator de desconto intertemporal -- o quanto o agente abre mão de consumir no presente para consumir no futuro -- $\xi_{t}^{c}$ representa um choque de preferências do consumidor.\\
+
+A restrição orçamentária intertemporal -- por sua vez -- pode ser escrita da seguinte forma:
+\begin{align*}
+P_t(C_{j,t} + I_{j,t}) \leq W_t L_{j,t} + R_t K_{j,t} + \Pi_t
+\end{align*}
+\noindent
+onde $P_t$ representa o preço no período $t$, $I_{t}$ representa o investimento da família no período $t$, $W_t$ representa o salário real, $R_t$ o rendimento do capital, $K_t$ o capital no período $t$ e $\Pi_t$ os dividendos das firmas. Ainda, é necessário apresentar a equação que represente a acumulação de capital ao longo do tempo, conhecida como lei de movimento do capital, esta é dada por:
+\begin{align}
+K_{j,t+1} = (1-\delta)K_{j,t} + I_{j,t}	
+\end{align}
+\noindent
+onde $\delta$ representa a taxa de depreciação do capital físico. Fazemos uso do lagrangiano (dinâmico) para a resolução do primeiro problema de otimização das famílias em respeito a utilidade. Temos, então:
+\begin{align*}
+\mathcal{L} = \mathbb{E}\sum_{t=0}^{\infty}\beta^{t}\xi_{t}^{c} \left\{ \frac{(C_{j,t} - hC_{j,t-1})^{1-\sigma}}{1-\sigma} - \chi \frac{L_{j,t}^{1 + \gamma}}{1 + \gamma} - \lambda_{j,t}[P_tC_{j,t} + P_tK_{j,t+1} \dots \right. \\
+ \left. - P_t(1-\delta)K_{j,t} - W_t L_{j,t} - R_t K_{j,t} - \Pi_t] \vphantom{\frac{L_{j,t}^{1 + \gamma}}{1 + \gamma}}   \right\}
+\end{align*}
+\noindent
+de forma que as derivadas parciais com respeito a $C_{j,t}$ e $K_{j,t+1}$ são calculadas, e igualadas a zero, nos dando as condições de primeira ordem:
+\begin{align} \label{parcial1}
+\frac{\partial \mathcal{L}}{\partial C_{j,t}} &= \xi_{t}^{c}(C_{j,t} - hC_{j,t-1})^{-\sigma} - \lambda_{j,t}P_t = 0 \\ \label{parcial2}
+\frac{\partial \mathcal{L}}{\partial K_{j,t+1}} &= -\xi_{t}^{c}\lambda_{j,t}P_t + \beta \mathbb{E}\{\xi_{t+1}^{c}\lambda_{j,t+1}[P_{t+1}(1 - \delta) + R_{t+1}]\} = 0
+\end{align}
+\noindent
+de acordo com a equação \ref{parcial1}, podemos representar $\lambda_{j,t} = (C_{j,t} - hC_{j,t-1})^{-\sigma}/P_t$. substituindo na equação \ref{parcial2} podemos obter a chamada \textit{equação de euler}, que expressa a preferência de consumo intertemporal do período $t$ contra o período $t+1$. Temos, então:
+\begin{align}\label{euler}
+\xi_{t}^{c}(C_{j,t} - hC_{j,t-1})^{-\sigma} = \beta \mathbb{E}\left\{ \xi_{t+1}^{c}(C_{j,t+1} - hC_{j,t})^{-\sigma}\left[(1-\delta) + \frac{R_{t+1}}{P_{t+1}}\right] \right\}
+\end{align}
+
+\subsection{A definição dos Salários}
+
+As famílias definem o salário partindo da hipótese  que a oferta de trabalho no mercado parte de uma estrutura monopolista. Isso é, o serviço é vendido às firmas de forma que as firmas representativas agregam diferentes tipos de trabalho num único ($L$).\\
+
+De forma que a hipótese anterior seja satisfeita, a agregação 
+do trabalho se da de acordo com a seguinte função de tecnologia:
+\begin{align} \label{trabalhoL}
+L_t = \left(\int_{0}^{1} L_{j,t}^{\frac{\omega - 1}{\omega}} dj\right)^{\frac{\omega}{\omega - 1}}
+\end{align}
+\noindent
+onde $\omega$ é a elasticidade de substituição entre diferentes tipos de trabalhos; e $L_{j,t}$ é a quantidade de trabalho ofertada por cada família no tempo $t$. O problema de otimização do sindicado é maximizar a oferta de trabalho para as firmas em termo dos salários. Assim:
+\begin{align*}
+\max_{L_{j,t}}W_t\left(\int_{0}^{1} L_{j,t}^{\frac{\omega - 1}{\omega}} dj\right)^{\frac{\omega}{\omega - 1}} - W_{j,t}\int_{0}^{1}L_{j,t}dj
+\end{align*}
+\noindent
+o que nos dá a seguinte condição de primeira ordem:
+\begin{align*}
+W_t\left(\frac{\omega}{\omega - 1}\right)\left[\int_{0}^{1} L_{j,t}^{\frac{\omega - 1}{\omega}} dj\right]^{\frac{\omega}{\omega - 1} - 1}\left(\frac{\omega - 1}{\omega}\right)L_{j,t}^{\frac{\omega - 1}{\omega} - 1} - W_{j,t} &= 0
+\end{align*}
+\noindent
+de onde segue que:
+\begin{align}
+L_{t}^{\frac{1}{\omega}} = \left(\int_{0}^{1} L_{j,t}^{\frac{\omega - 1}{\omega}} dj\right)^{\frac{1}{\omega - 1}}
+\end{align}
+\noindent
+de onde podemos deduzir que 
+\begin{align*}
+W_{t}L_{t}^{\frac{1}{\omega}}L_{t}^{-\frac{1}{\omega}} - W_{j,t} = 0
+\end{align*}
+\noindent
+temos, então, a equação de demanda por trabalho:
+\begin{align}\label{trabalho}
+L_{j,t} = L_t \left(\frac{W_t}{W_{j,t}}\right)^{\omega}
+\end{align}
+\noindent
+substituindo \ref{trabalho} em \ref{trabalhoL} temos:
+\begin{align*}
+L_t &= \left\{ \int_{0}^{1} \left[ L_t \left( \frac{W_t}{W_{j,t}} \right)^{\omega}\right]^{\frac{\omega - 1}{\omega}}dj \right\}^{\frac{\omega}{\omega - 1}}\\
+L_t &= L_t W_{t}^{\omega}\left\{ \int_{0}^{1} \left[ \left( \frac{1}{W_{j,t}} \right)^{\omega}\right]^{\frac{\omega - 1}{\omega}}dj \right\}^{\frac{\omega}{\omega - 1}}\\
+W_{t}^{\omega} &= \left[\int_{0}^{1} (W_{j,t}^{\omega - 1}) dj \right]^{\frac{\omega}{\omega - 1}}
+\end{align*}
+\noindent
+de forma que o salário agregado é dado por:
+\begin{align}\label{salarioAgregado}
+W_{t} = \left(\int_{0}^{1} W_{j,t}^{1-\omega}dj\right)^{\frac{1}{1-\omega}}
+\end{align}
+\end{document} 

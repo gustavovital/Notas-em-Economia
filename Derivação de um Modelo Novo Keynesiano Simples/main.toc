@@ -1,0 +1,3 @@
+\babel@toc {portuguese}{}
+\contentsline {section}{\numberline {1}Famílias}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}A definição dos Salários}{2}{subsection.1.1}%
